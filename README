@@ -1,0 +1,9 @@
+Name: Chris Pak
+SUID: 05522640
+Sunet: cpak
+
+To build this, just run ghc --make histogram.hs. For running the program, just
+run the program with filenames as arguments, eg "./histogram HeartofDarkness.txt"
+It is ok to use multiple files for inputs. 
+If no arguments are provided, takes input from stdin, you need to end input to stdin
+with EOT, or ctl-d. 
