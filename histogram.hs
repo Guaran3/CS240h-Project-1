@@ -66,13 +66,11 @@ printList (xs:list) freq len = do
 getInp :: [String] -> IO String
 getInp [] = getContents
 getInp args = getFileStrings [] args
-    where getFileStrings string [] = return $ concat string
+    where getFileStrings string [] = return string
           getFileStrings string (next:remaining) = do
-                putStrLn next
                 curFile <- openFile next ReadMode
                 contents <- hGetContents curFile
-                putStrLn contents
-                getFileStrings ((contents ++ " "):string) remaining
+                getFileStrings (contents ++ " " ++ string) remaining
 
 main = do
     args <- getArgs
